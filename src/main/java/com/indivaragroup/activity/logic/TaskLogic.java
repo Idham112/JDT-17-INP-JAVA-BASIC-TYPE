@@ -11,11 +11,26 @@ public class TaskLogic {
 
         // Add dummy data for testing
         todoList.add(new TaskDTO("T01", "Project A", "Design", "Budi",
-                TaskDTO.Priority.HIGH, "2026-05-20", "2026-05-25",
+                TaskDTO.PRIORITY_HIGH, "2026-05-20", "2026-05-25",
                 8.0, 50.0, "Reviewer1", "Admin"));
+        todoList.add(new TaskDTO("T02", "Project A", "Frontend", "Andi",
+                TaskDTO.PRIORITY_MEDIUM, "2026-05-21", "2026-05-26",
+                12.0, 30.0, "Reviewer1", "Admin"));
+
+        todoList.add(new TaskDTO("T03", "Project B", "Testing", "Citra",
+                TaskDTO.PRIORITY_CRITICAL, "2026-05-22", "2026-05-27",
+                5.0, 20.0, "Reviewer2", "Admin"));
 
         // Add more logic here (e.g., calculations, printing)
         System.out.println("System initialized with " + todoList.size() + " tasks.");
+        System.out.println("----------------------------------------------");
+
+        for (TaskDTO task : todoList) {
+            System.out.println("ID: " + task.getTaskId() +
+                    " | Assignee: " + task.getAssignee() +
+                    " | Status: " + task.getStatus() +
+                    " | Progress: " + task.getProgress() + "%");
+        }
     }
 
     private List<TaskDTO> tasks = new ArrayList<>();
@@ -30,7 +45,7 @@ public class TaskLogic {
         double totalWorkload = 0;
         for (TaskDTO task : tasks) {
             if (task.getAssignee().equals(assignee) &&
-                    (task.getStatus() != TaskDTO.Status.DONE && task.getStatus() != TaskDTO.Status.CANCELLED)) {
+                    (task.getStatus() != TaskDTO.STATUS_DONE && task.getStatus() != TaskDTO.STATUS_CANCELLED)) {
                 totalWorkload += task.getEstimatedHour();
             }
         }

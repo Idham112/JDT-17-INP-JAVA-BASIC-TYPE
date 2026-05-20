@@ -2,9 +2,16 @@ package com.indivaragroup.activity.dto;
 
 public class TaskDTO {
 
-    // Enums for validation
-    public enum Status { OPEN, IN_PROGRESS, READY_REVIEW, DONE, CANCELLED }
-    public enum Priority { LOW, MEDIUM, HIGH, CRITICAL }
+    public static final String STATUS_OPEN = "OPEN";
+    public static final String STATUS_IN_PROGRESS = "IN_PROGRESS";
+    public static final String STATUS_READY_REVIEW = "READY_REVIEW";
+    public static final String STATUS_DONE = "DONE";
+    public static final String STATUS_CANCELLED = "CANCELLED";
+
+    public static final String PRIORITY_LOW = "LOW";
+    public static final String PRIORITY_MEDIUM = "MEDIUM";
+    public static final String PRIORITY_HIGH = "HIGH";
+    public static final String PRIORITY_CRITICAL = "CRITICAL";
 
     // All fields from your requirements
     private String taskId;
@@ -12,8 +19,8 @@ public class TaskDTO {
     private String title;
     private String description;
     private String assignee;
-    private Priority priority;
-    private Status status;
+    private String priority;
+    private String status;
     private String startDate; // Using String as requested
     private String dueDate;   // Using String as requested
     private double estimatedHour;
@@ -25,14 +32,14 @@ public class TaskDTO {
 
     // Constructor
     public TaskDTO(String taskId, String project, String title, String assignee,
-                   Priority priority, String startDate, String dueDate,
+                   String priority, String startDate, String dueDate,
                    double estimatedHour, double weight, String reviewer, String createdBy) {
         this.taskId = taskId;
         this.project = project;
         this.title = title;
         this.assignee = assignee;
         this.priority = priority;
-        this.status = Status.OPEN; // Default
+        this.status = STATUS_OPEN; // Default
         this.startDate = startDate;
         this.dueDate = dueDate;
         this.estimatedHour = estimatedHour;
@@ -40,19 +47,21 @@ public class TaskDTO {
         this.reviewer = reviewer;
         this.createdBy = createdBy;
         this.progress = 0.0;
+
+        setStatus(STATUS_OPEN);
     }
 
     // --- Core Logic ---
 
     // Automatically update progress when status changes (Rule 4.1)
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
         switch (status) {
-            case OPEN -> this.progress = 0.0;
-            case IN_PROGRESS -> this.progress = 50.0;
-            case READY_REVIEW -> this.progress = 80.0;
-            case DONE -> this.progress = 100.0;
-            case CANCELLED -> this.progress = 0.0;
+            case STATUS_OPEN -> this.progress = 0.0;
+            case STATUS_IN_PROGRESS -> this.progress = 50.0;
+            case STATUS_READY_REVIEW -> this.progress = 80.0;
+            case STATUS_DONE -> this.progress = 100.0;
+            case STATUS_CANCELLED -> this.progress = 0.0;
         }
     }
 
@@ -70,7 +79,7 @@ public class TaskDTO {
     // Getters
     public String getTaskId() { return taskId; }
     public String getAssignee() { return assignee; }
-    public Status getStatus() { return status; }
+    public String getStatus() { return status; }
     public double getEstimatedHour() { return estimatedHour; }
     public double getWeight() { return weight; }
     public double getProgress() { return progress; }
