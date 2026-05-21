@@ -77,10 +77,27 @@ public class TaskDTO {
     }
 
     // Getters
-    public String getTaskId() { return taskId; }
-    public String getAssignee() { return assignee; }
-    public String getStatus() { return status; }
-    public double getEstimatedHour() { return estimatedHour; }
-    public double getWeight() { return weight; }
-    public double getProgress() { return progress; }
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public String getAssignee() {
+        return assignee;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public double getEstimatedHour() {
+        return estimatedHour;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getProgress() {
+        return progress;
+    }
 }

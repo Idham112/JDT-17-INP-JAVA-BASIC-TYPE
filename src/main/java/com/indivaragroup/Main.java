@@ -1,4 +1,5 @@
 package com.indivaragroup;
+
 import com.indivaragroup.calculation.registration.identity.CalculationRegistrationIdentity;
 import com.indivaragroup.characters.examples.CharacterExamples;
 import com.indivaragroup.house.floor.logic.CeramicCheck;
@@ -13,7 +14,7 @@ import com.indivaragroup.activity.logic.TaskLogic;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
-        /*
+
         String helloworld = "Hello JDT 17";
         System.out.println("Ini string untuk hello world: " + helloworld);
 
@@ -28,24 +29,36 @@ public class Main {
 
         char helloCharacter = 'A';
         System.out.println("Ini char untuk hello world: " + helloCharacter);
-        */
 
+        //Ceramic
+        CeramicCheck.checkCeramic();
 
+        //Check Identity
+        CalculationRegistrationIdentity.calculateRegisterIdentity();
 
-        //CeramicCheck.checkCeramic();
-        //CalculationRegistrationIdentity.calculateRegisterIdentity();
-        //StudentScoring.printGrade();
-        //ConvertDataType.numberConvert();
-        //CharacterExamples.characterExamples();
-        //ArrayExample.arrayExample();
+        //Scoring
+        StudentScoring.printGrade();
 
+        //Convert datatype
+        ConvertDataType.numberConvert();
+
+        //Character
+        CharacterExamples.characterExamples();
+
+        //Array
+        ArrayExample.arrayExample();
+
+        //Primitive and non Primitive
         TypeDataNonPrimitive typeDataNonPrimitive = new TypeDataNonPrimitive();
-        //typeDataNonPrimitive.getTypeDataNonPrimitive();
+        typeDataNonPrimitive.getTypeDataNonPrimitive();
 
-        //JavLogic.javLogic();
+        //Jav code
+        JavLogic.javLogic();
 
+        //To do list
         TaskLogic taskLogicApp = new TaskLogic();
         taskLogicApp.runApplication();
+
 
 
 
