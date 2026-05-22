@@ -10,10 +10,26 @@ import com.indivaragroup.type.data.primitive.TypeDataNonPrimitive;
 import com.indivaragroup.type.data.array.ArrayExample;
 import com.indivaragroup.activity.logic.TaskLogic;
 
+import com.indivaragroup.operator.augmentedAss.AugmentAssignment;
+import com.indivaragroup.operator.unary.Unary;
+import com.indivaragroup.operator.comparison.Comparison;
+import com.indivaragroup.challengeBagus.TestBagus;
+import com.indivaragroup.operator.bitwise.BitwiseExample;
+import com.indivaragroup.operator.booleanOp.BooleanEx;
+import com.indivaragroup.operator.instanceOf.InstanceOf;
+import com.indivaragroup.expression.Expression;
+import com.indivaragroup.ifStatement.IfStatement;
+import com.indivaragroup.ifStatement.IfStateChallenge;
+import com.indivaragroup.ifStatement.ElseIfStatement;
+import com.indivaragroup.ifStatement.StatementChallenge;
+import com.indivaragroup.ifStatement.StatementChallengeTwo;
+import com.indivaragroup.ifStatement.Switch;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
+    /*
 
         String helloworld = "Hello JDT 17";
         System.out.println("Ini string untuk hello world: " + helloworld);
@@ -48,7 +64,7 @@ public class Main {
         //Array
         ArrayExample.arrayExample();
 
-        //Primitive and non Primitive
+        //Primitive and non-Primitive
         TypeDataNonPrimitive typeDataNonPrimitive = new TypeDataNonPrimitive();
         typeDataNonPrimitive.getTypeDataNonPrimitive();
 
@@ -59,8 +75,36 @@ public class Main {
         TaskLogic taskLogicApp = new TaskLogic();
         taskLogicApp.runApplication();
 
+        //Augmented assignment operator
+        AugmentAssignment.AugmentAssignment();
 
+        //Unary operator
+        Unary.UnaryExample();
 
+        //Comparison operator
+        Comparison.ComparisonOperator();
+
+        TestBagus.TestBagus();
+
+        BitwiseExample.BitWiseExamples();
+
+        BooleanEx.BooleanExamples();
+
+        InstanceOf.InstanceOfExample();
+
+        Expression.ExpressionExample();
+
+        IfStatement.IfStateExample();
+
+        IfStateChallenge.IfStateChallenge();
+
+        ElseIfStatement.ElseIfExample();
+
+        StatementChallenge.ParkirKendaraan();
+     */
+        StatementChallengeTwo.Placeholder();
+
+        Switch.SwitchLearn();
 
     }
 
